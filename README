@@ -1,10 +1,5 @@
 # 📊 Telecom X: Análise de Evasão de Clientes (Churn)
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![Seaborn](https://img.shields.io/badge/Seaborn-blue?style=for-the-badge)
-
 ## 🎯 Sobre o Projeto
 Este projeto faz parte do **Desafio de Data Science (Challenge 2) do Programa Alura ONE**. 
 A Telecom X, uma empresa fictícia de telecomunicações, vem enfrentando uma alta taxa de evasão de clientes (Churn). Fui encarregado de atuar como Assistente de Análise de Dados para realizar o processo completo de **ETL (Extração, Transformação e Carga)** e a **Análise Exploratória de Dados (EDA)**, com o objetivo de identificar os principais motivos que levam os clientes a cancelarem seus serviços.
