@@ -1,0 +1,46 @@
+# 📊 Telecom X: Análise de Evasão de Clientes (Churn)
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![Seaborn](https://img.shields.io/badge/Seaborn-blue?style=for-the-badge)
+
+## 🎯 Sobre o Projeto
+Este projeto faz parte do **Desafio de Data Science (Challenge 2) do Programa Alura ONE**. 
+A Telecom X, uma empresa fictícia de telecomunicações, vem enfrentando uma alta taxa de evasão de clientes (Churn). Fui encarregado de atuar como Assistente de Análise de Dados para realizar o processo completo de **ETL (Extração, Transformação e Carga)** e a **Análise Exploratória de Dados (EDA)**, com o objetivo de identificar os principais motivos que levam os clientes a cancelarem seus serviços.
+
+## 🛠️ Tecnologias e Bibliotecas Utilizadas
+* **Linguagem:** Python
+* **Manipulação de Dados:** Pandas, Requests, JSON
+* **Visualização de Dados:** Seaborn, Matplotlib
+* **Ambiente:** Jupyter Notebook / Google Colab
+
+## 🚀 Etapas do Desenvolvimento
+
+### 1. Extração (Extract)
+Os dados brutos foram consumidos diretamente de uma API simulada (repositório no GitHub) no formato `JSON`. Como os dados possuíam dicionários aninhados, foi utilizada a função `pd.json_normalize()` para expandir as chaves e estruturar o DataFrame.
+
+### 2. Transformação e Limpeza (Transform)
+* **Tratamento de Tipos:** Conversão da coluna de Gastos Totais (`TotalCharges`) de texto (`object`) para numérico (`float`), tratando valores em branco gerados por clientes recém-cadastrados (preenchidos com `0`).
+* **Padronização e Localização:** Remoção de prefixos das colunas originais e tradução completa dos nomes das colunas e dos registros internos (ex: 'Yes'/'No' para 'Sim'/'Nao') para o português, facilitando a leitura e a geração de gráficos.
+
+### 3. Análise Exploratória (Load & Analysis)
+Foram geradas estatísticas descritivas e visualizações para entender o comportamento do consumidor:
+* **Gráficos de Barras (`countplot`):** Para cruzar o Churn com variáveis categóricas (Gênero, Tipo de Serviço de Internet, Tipo de Contrato).
+* **Histogramas (`histplot`):** Para avaliar a distribuição contínua de variáveis como Meses de Contrato (Tenure) e Gastos Mensais.
+* **Matriz de Correlação (`heatmap`):** Para validar matematicamente as hipóteses visuais.
+
+## 💡 Principais Insights de Negócio
+Após analisar uma base de mais de 7.200 clientes (com taxa geral de evasão de **26,54%**), descobrimos que:
+1. **O Contrato Mensal é o grande vilão:** A esmagadora maioria dos cancelamentos ocorre em planos mensais. Clientes em planos anuais ou bienais são altamente retidos.
+2. **Abandono precoce:** O pico de cancelamentos acontece logo nos primeiros meses de assinatura. Se o cliente ultrapassa essa barreira inicial, a chance de evasão despenca.
+3. **Alerta na Fibra Óptica:** O serviço de Fibra Óptica possui uma taxa de rejeição muito superior à internet via cabo comum (DSL), indicando um possível problema de preço ou qualidade técnica.
+4. **Faturas altas assustam:** Existe uma grande concentração de cancelamentos quando a fatura mensal atinge a faixa entre R$ 70,00 e R$ 110,00.
+
+## 📌 Recomendações Estratégicas
+* Implementar campanhas agressivas de desconto para incentivar a migração de clientes do plano Mensal para os planos Anuais.
+* Criar um time de *Onboarding* focado na experiência do cliente durante os primeiros 3 meses de contrato.
+* Revisar a infraestrutura técnica e o custo-benefício dos planos de Fibra Óptica.
+
+---
+*Desenvolvido por Leandro durante o Desafio de Data Science do Programa Alura ONE.*
